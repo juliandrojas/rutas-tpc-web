@@ -4,11 +4,9 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-//import "./index.css";
-/* existing imports */
 import ErrorPage from "./error-page";
 import Home from "./routes/Home";
-
+import Login from "./routes/Login"; // Importa el componente directamente, no con *
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,8 +14,9 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage /> 
   },
   {
-    path: "/hola",
-    element:<h1>Hola Mundo</h1>
+    path: "/login",
+    element:<Login />,
+    errorElement: <ErrorPage />
   }
 ]);
 

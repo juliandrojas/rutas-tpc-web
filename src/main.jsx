@@ -5,20 +5,34 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ErrorPage from "./error-page";
-import Home from "./routes/Home";
-import Login from "./routes/Login"; // Importa el componente directamente, no con *
+import HomeCompany from "./routes/HomeCompany";
+import HomeRoutes from "./routes/HomeRoutes";
+import Login from "./routes/Login";
+import Menu from "./routes/Menu";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Menu />,
     errorElement: <ErrorPage /> 
   },
   {
     path: "/login",
     element:<Login />,
     errorElement: <ErrorPage />
-  }
+  },
+  {
+    path: "/company",
+    element:<HomeCompany />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/routes",
+    element:<HomeRoutes />,
+    errorElement: <ErrorPage />
+  },
 ]);
+
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
